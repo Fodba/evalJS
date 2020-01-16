@@ -3,16 +3,16 @@
 function AfficherMasquer(nombre)
 {
     let div =  document.getElementById('contentexo');
-    let label = document.createElement('label');
-    let input = document.createElement('input');
-    let h3 = document.getElementById('titre');
+   
     //console.log(nombre);
     //console.log(div);
     if(div.childElementCount == 0)
     {
        if(nombre==1)
        {        
-                
+                let label = document.createElement('label');
+                let input = document.createElement('input');
+                let h3 = document.createElement('h3');
                 let label2 = document.createElement('label');
                 let input2 = document.createElement('input');
                 let button = document.createElement('input');
@@ -27,11 +27,11 @@ function AfficherMasquer(nombre)
                 button.onclick = function(){
                     exo1(input.value,input2.value);
                 }
-                div.append(h3,label,document.createElement('br'),input,document.createElement('br'),label2,document.createElement('br'),input2,document.createElement('br'),button); 
+                div.append(h3,label,document.createElement('br'),input,document.createElement('br'),label2,document.createElement('br'),input2,document.createElement('br'),button,document.createElement('br')); 
         }
         if(nombre==2)
-        {
-            console.log("salut");
+        {           
+                    let h3 = document.createElement('h3');
                     let label2 = document.createElement('label');
                     let input2 = document.createElement('input');
                     let button = document.createElement('input');
@@ -41,9 +41,9 @@ function AfficherMasquer(nombre)
                  insertAttr(input2,{'type':'text','id':'nombre','name':'nombre'});
                  insertAttr(button,{'type':'button','value':'valider'});
                  button.onclick = function(){
-                     exo2(input.value);
+                     exo2(input2.value);
                  };
-                 div.append(h3,label2,document.createElement('br'),input2,document.createElement('br'),button);
+                 div.append(h3,label2,document.createElement('br'),input2,document.createElement('br'),button,document.createElement('br'));
 
         }
         if(nombre==3)
@@ -125,14 +125,16 @@ function exo1(prixunitaire, qtecom)
 
 function exo2(nombre)
 {
-    let div =  document.getElementById('content');
+    let div =  document.getElementById('contentexo');
     let rep = document.createElement('p');
-    let tab =[nombre];
+    let tab =[];
     if(nombre>0){
         let somme=0;
-        for(let i = 1; i<=nombre; i++)
+        for(let i = 1; i<nombre; i++)
         {
+            
             tab.push(i);
+            console.log(tab);
             somme+=i;
         }
         rep.textContent = tab.join("+")+' = '+somme; 
