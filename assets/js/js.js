@@ -144,7 +144,25 @@ function exo2(nombre)
 
 function exo3()
 {
-    alert("exo3");
+    let nombre = prompt("Entrer un nombre");
+    let somme = parseInt(nombre);
+    let tab = [];
+    let min;
+    let max;
+    let div =  document.getElementById('contentexo');
+    let rep = document.createElement('p');
+    for (let i = 2; nombre!=0; i++)
+    {
+        nombre = parseInt(prompt("Saisir le nombre n° "+i));
+        if(nombre >0)
+        {
+        tab.push(nombre);
+        }
+    }
+    min = Math.min.apply(Math,tab);
+    max = Math.max.apply(Math,tab);
+    rep.textContent = 'Vous avez saisies les nombre suivants : '+tab.join("-")+" Le nombre minimum saisie est: "+min+". Le nombre maximum saisie est: "+max;
+    div.append(rep);
 }
 
 function exo4()
