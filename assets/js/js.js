@@ -80,7 +80,20 @@ function AfficherMasquer(nombre)
         }
         if(nombre==6)
                 {
-                    exo6();
+                    let h3 = document.createElement('h3');
+            h3.innerHTML = "recherche d'un prénom";
+            let label2 = document.createElement('label');
+            let input2 = document.createElement('input');
+            let button = document.createElement('input');
+            label2.for='prenom';
+            label2.textContent= 'Quel prenom voulez-vous effacer ? :';
+            insertAttr(input2,{'type':'text','id':'prenom','name':'prenom'});
+            insertAttr(button,{'type':'button','value':'valider'});
+            button.onclick = function(){
+                     exo6(input2.value);
+                 };
+            
+            div.append(h3,label2,document.createElement('br'),input2,document.createElement('br'),button,document.createElement('br'));
                 }
                 
         
@@ -138,7 +151,7 @@ function exo1(prixunitaire, qtecom)
     rep.textContent += 'Remise: '+remise+' %  \r\n ';
     rep.textContent += 'Prix total: '+prixtot+' euros';
     div.append(rep);
-    setTimeout(function(){div.removeChild(rep);},3000);
+    setTimeout(function(){div.removeChild(rep);},7000);
 }
 
 // 15 * 24 = 360; 360 * 2% = 7.2, total avec remise = 324 + port = 331.2
@@ -159,7 +172,7 @@ function exo2(nombre)
         }
         rep.textContent = tab.join("+")+' = '+somme; 
         div.append(rep);
-        setTimeout(function(){div.removeChild(rep);},3000);
+        setTimeout(function(){div.removeChild(rep);},7000);
     }
 }
 
@@ -193,7 +206,7 @@ function exo3()
     rep.textContent += 'Le nombre minimum saisie est: ' +min+'\r\n';
     rep.textContent += 'Le nombre maximum saisie est: '+max;
     div.append(rep);
-    setTimeout(function(){div.removeChild(rep);},3000);
+    setTimeout(function(){div.removeChild(rep);},7000);
     }
     else
     {
@@ -257,7 +270,7 @@ function exo4()
         rep.textContent += moyen + " personne entre 20 et 40 ans.\r\n";
         rep.textContent += vieux + " personne de plus de 40 ans.\r\n";
         div.append(rep);
-        setTimeout(function(){div.removeChild(rep);},3000);
+        setTimeout(function(){div.removeChild(rep);},7000);
         
     }
     else{
@@ -284,13 +297,35 @@ function exo5(nombre)
         rep.textContent+= nombre+" x "+i+ " = "+produit+ "\r\n";
     }
     div.append(rep);
-    setTimeout(function(){div.removeChild(rep);},3000);
+    setTimeout(function(){div.removeChild(rep);},7000);
     
 }
 
-function exo6()
+function exo6(prenom)
 {
-    alert("exo6");
+   let div =  document.getElementById('contentexo');
+    let rep = document.createElement('p');
+    rep.setAttribute('style', 'white-space: pre;text-align:left;');
+    let tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"]; 
+    let res = tab.includes(prenom);
+    if(res == true)
+    {
+        let index = tab.indexOf(prenom);
+        tab.push(' ');
+        rep.textContent = "le prenom "+ prenom +" a été trouver et effacer dans le tableau \r\n";
+        tab.splice(index,1);
+        tab.push(' ');
+        rep.textContent += "Tableau fin: \r\n";
+        rep.textContent += tab.join("-");
+       
+    }
+    else
+    {
+        rep.textContent = "Le prenom "+prenom+ " n'a pas été trouver dans le tableau";
+    }
+     div.append(rep);
+        setTimeout(function(){div.removeChild(rep);},7000);
+    
 }
 
 
