@@ -15,13 +15,13 @@
     <!-- Logo -->
     <div class="col-12">
       <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4 col-xl-4">
           <img class =" img-fluid jarditoutlogo" src="img/jarditou_logo.jpg" alt="logo">
         </div>
-          <div class="col-lg-4 text-center m-auto retour">
+          <div class="col-lg-4 col-xl-4 text-center m-auto retour">
               <a href="file:///C:/Users/80010-70-01/Desktop/NetBeansProjects/EvalJS/index.html"><img src="../assets/img/icons/house-fill.svg" class="img-fluid" width="32" height="32"><br/>Retour à l'évaluation JS</a>
             </div>
-        <div class="col-4  logo ">
+        <div class="col-lg-4 col-xl-4 logo ">
           <h3>Tout le jardin</h3><br/>
         </div>
       </div>
@@ -48,33 +48,33 @@
       <div class="row">
         <div class="col-lg-8 col-xs-6 col-sm-6 col-md-6 col-xl-8">
 
-          <form action="http://bienvu.net/script.php" method="post" id="formulaire_contact" class="was-validated">
+            <form action='http://bienvu.net/script.php' onsubmit='return verification(this)' id="formulaire_contact">
             <fieldset class="border">
               <div class="col-9">
                 <legend>Vos Coordonnées</legend>
                 <label for="nom">Votre Nom*:</label>
-                <input type="text" class="form-control" placeholder="Simpson" id="nom" required>
+                <input type="text" class="form-control" placeholder="Simpson" id="nom" name="nom" onblur='verifNomPrenom(this)'>
                 <label for="prenom">Votre Prénom*:</label>
-                <input type="text" class="form-control" placeholder="Homer" id="prenom" required>
+                <input type="text" class="form-control" placeholder="Homer" id="prenom" name="prenom" onblur='verifNomPrenom(this)' >
                 <label>Sexe*:</label><br/>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" required>
+                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked >
                   <label class="custom-control-label" for="customRadioInline1" >Femme</label>
                 </div><br/>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" required>
+                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
                   <label class="custom-control-label" for="customRadioInline2">Homme</label>
                 </div><br/>
                 <label for="exampleFormControlInput2">Date de Naissance*:</label>
-                <input type="date" class="form-control"  name="daten" id="exampleFormControlInput2" required>
+                <input type="date" class="form-control"  name="daten" id="exampleFormControlInput2" onblur='verifDateN(this)'>
                 <label for="Add">Adresse :</label>
-                <input type="text" id="Add"  name="adresse" class="form-control" placeholder="23 rue des parpings">
+                <input type="text" id="Add"  name="adresse" class="form-control" placeholder="23 rue des parpings" onblur ='verifAdd(this)'>
                 <label for="CP">Code Postal:</label>
-                <input type="text" name="cp" class="form-control" placeholder="80000" id="CP" pattern="[0-9]{5}">
+                <input type="text" name="cp" class="form-control" placeholder="80000" id="CP" onblur='verifCp(this)'>
                 <label for="ville">Ville:</label>
-                <input type="text" class="form-control" id="ville" placeholder="Amiens" name="ville">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="dave.loper@afpa.fr">
+                <input type="text" class="form-control" id="ville" placeholder="Amiens" name="ville"onblur='verifVille(this)'>
+                <label for="exampleFormControlInput1">Adresse Mail*:</label>
+                <input type="email" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="dave.loper@afpa.fr" onblur='verifMail(this)'>
               <br/>
             </div>
             </fieldset><br/>
@@ -100,7 +100,7 @@
 
           </form>
         </div>
-      <section class="col-lg-4 col-xs-6 col-sm-6 col-md-6 col-xl-4 coldroite">
+      <section class=" d-none col-lg-4 d-lg-block  col-xl-4 d-xl-block  col-md-4 d-md-block  coldroite">
         [COLONNE DROITE]
       </section>
         </div>
@@ -122,4 +122,5 @@
       </div>
 </div>
 </body>
+<<script src="js/main.js"></script>
 </html>
