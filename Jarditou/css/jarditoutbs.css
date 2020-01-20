@@ -1,0 +1,42 @@
+body {
+  padding-top: 10px;
+}
+[class*="col-"], footer {
+  /*background-color: lightgreen;*/
+  /*border: 1px solid black;*/
+  border-radius: 6px;
+  line-height: 40px;
+
+}
+.menu, footer{
+  background-color: black;
+}
+.nav>li>a{
+  color:white;
+}
+.logo>h3{
+  font-family: "Felix Titling";
+  padding-top: 1em;
+}
+.coldroite{
+  background-color: grey;
+}
+.content{
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.table{
+  border: 1px solid grey;
+}
+
+img.img-fluid.image{
+  /*width: 50%;*/
+  border: 1px solid grey;
+  border-radius: 6px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+thead{
+  text-align: center;
+}

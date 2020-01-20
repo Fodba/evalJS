@@ -1,0 +1,88 @@
+.jarditoutlogo{
+  width: 20%;
+  height: 20%;
+}
+table,td
+{
+  border: 1px outset grey;
+  text-align: justify;
+  vertical-align: top;
+  width: 120px;
+  padding:5px;
+}
+.image{
+  width: 80%;
+  height: 80%;
+  border: 1px solid grey;
+}
+table{
+  width: 75%;
+  border-collapse:collapse;
+}
+
+th{
+  height: 30px;
+  border: 1px solid grey;
+  width: 100px;
+  padding:5px;
+}
+thead{
+  border-bottom: 2px outset grey;
+}
+form {
+  width: 600px;
+  margin: 2px 1em;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  position: center;
+}
+label{
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+input, textarea, option{
+  font: 1em sans-serif;
+  width: 150px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  margin-left: 10px;
+}
+input[type=radio]{
+  width: 30px;
+}
+
+.menu, .footer{
+  background-color: black;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.menu>li, footer>ul>li{
+  display: inline;
+}
+
+.Promotion{
+  width:100%
+}
+
+.menu>li>a, footer>ul>li>a{
+  color: white;
+}
+.coldroite{
+  background-color: grey;
+  float: right;
+  top: 46em;
+  right: 1%;
+  width: 18%;
+  height: 28.7em;
+  padding: 1em;
+}
+h3.logo{
+  text-align: right;
+  right: 40%;
+  font-family: "Felix Titling";
+
+
+}

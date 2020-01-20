@@ -1,0 +1,24 @@
+html{
+  font-size: 100%;
+}
+
+.coldroite{
+  display: none;
+  position: absolute;
+}
+table{
+
+  margin: 0 auto;
+  font-size: 1rem;
+}
+.menu>li, footer>ul>li{
+  display: list-item;
+}
+
+.menu>li>a, footer>ul>li>a{
+  color: white;
+}
+a, h2, p, label, form{
+  font-size: 1rem;
+}
+
